@@ -4,15 +4,30 @@ import React, { useState } from 'react';
 function Page() {
     const [user, setUser] = useState('');
     const [amountPayed, setamountPayed] = useState('');
-    const [debtors, setDebptors] = useState('');
+    const [debtors, setDebtors] = useState([]);
     
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log("User:", user);
-        console.log("Amount:", amountPayed);
-        console.log("Debtors:", debtors);
+        // console.log("User:", user);
+        // console.log("Amount:", amountPayed);
+        // console.log("Debtors:", debtors);
     };
+
+    const handleCheck = (e) => {
+        const { value, checked } = e.target;
+        console.log(`${value} is ${checked}`);
+
+        if (checked) {
+            
+          }
+        
+          // Case 2  : The user unchecks the box
+          else {
+            
+          }
+        
+    }
 
     
     
@@ -47,25 +62,25 @@ function Page() {
                 </div>
                 
                 <div>
-                    <label for="price" class="block text-sm font-medium text-gray-700 sm:text-3xl">Price</label>
+                    <label for="price" class="block text-sm font-medium text-gray-700 sm:text-3xl h-">Price</label>
                     <div class="relative mt-1 rounded-md shadow-sm">
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                        <div class="h-32pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                             <span class="text-gray-500 sm:text-3xl">$</span>
 
                         </div>
-                        <input type="text" name="price" id="price" class="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00" value={amountPayed} onChange={(event) => {
+                        <input type="text" name="price" id="price" class="h-16 block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00" value={amountPayed} onChange={(event) => {
                             setamountPayed(event.target.value);
         }}/>
                     </div>
                 </div>
 
-                <div class="flex justify-center flex-col bg-white mt-5 h-32 overflow-auto sm:text-3xl">
+                <div id="checkBoxes" class="flex justify-center flex-col bg-white mt-5 h-32 overflow-auto sm:text-xl w-1/3 pt-5 px-3 rounded-md mb-2">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox1" value="option1"/>
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox1" value="option1" onChange={handleCheck}/>
                         <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox1">Nick</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="option2"/>
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="option2" onChange={handleCheck}/>
                         <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Zac</label>
                     </div>
                     <div class="form-check form-check-inline">
