@@ -1,4 +1,15 @@
+import React, { useState } from 'react';
+
+
 function Page() {
+    
+    const [value, setValue] = useState('');
+
+    const handleChange = (event) => {
+      setValue(event.target.value);
+    };
+    
+    
     return (
         <div className="h-screen bg-gradient-to-r from-cyan-500 to-blue-500 overflow-hidden">
             <div class="text-2xl font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 bg-gradient-to-r from-cyan-500 to-blue-500">
@@ -44,6 +55,7 @@ function Page() {
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
