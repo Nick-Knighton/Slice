@@ -31,9 +31,7 @@ function Page() {
             </div>
 
             <div id='form elements'className="h-full flex flex-col justify-center items-center">
-
-            <div>
-                    
+                <div>
                     <div class="relative mt-1 rounded-md shadow-sm">
                         <select id="currency" name="currency" class="h-full rounded-md border-transparent bg-white py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm ">
                             <option>Nick</option>
@@ -70,8 +68,13 @@ function Page() {
                         <label class="form-check-label inline-block text-gray-800 opacity-50" for="inlineCheckbox3">Will (disabled)</label>
                     </div>
                 </div>
+                
+                <button class="bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full">
+                    1234
+                </button>
 
             </div>
+
 
         </div>
 
