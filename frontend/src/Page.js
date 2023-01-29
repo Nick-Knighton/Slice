@@ -9,24 +9,23 @@ function Page() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        // console.log("User:", user);
-        // console.log("Amount:", amountPayed);
-        // console.log("Debtors:", debtors);
+        console.log("User:", user);
+        console.log("Amount:", amountPayed);
+        console.log("Debtors:", debtors);
     };
 
     const handleCheck = (e) => {
         const { value, checked } = e.target;
-        console.log(`${value} is ${checked}`);
+        // console.log(`${value} is ${checked}`);
 
         if (checked) {
-            
+            setDebtors(debtors => debtors.concat(value))
           }
         
           // Case 2  : The user unchecks the box
-          else {
-            
-          }
-        
+        else {
+            setDebtors(debtors.filter((e) => e !== value));
+        }
     }
 
     
@@ -74,35 +73,32 @@ function Page() {
                     </div>
                 </div>
 
-                <div id="checkBoxes" class="flex justify-center flex-col bg-white mt-5 h-32 overflow-auto sm:text-xl w-1/3 pt-5 px-3 rounded-md mb-2">
+                <div id="checkBoxes" class="flex justify-top flex-col bg-white mt-2 h-32 overflow-auto sm:text-xl w-1/3 px-3 pt-2 pb-2 rounded-md mb-2 mt-5">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox1" value="option1" onChange={handleCheck}/>
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox1" value="Nick" onChange={handleCheck}/>
                         <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox1">Nick</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="option2" onChange={handleCheck}/>
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="Zac" onChange={handleCheck}/>
                         <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Zac</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="option2"/>
-                        <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Sam</label>
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="Will" onChange={handleCheck}/>
+                        <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Will</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="option2"/>
-                        <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Tim</label>
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="Liam" onChange={handleCheck}/>
+                        <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Liam</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="option2"/>
-                        <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Eli</label>
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="William" onChange={handleCheck}/>
+                        <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">William</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="option2"/>
-                        <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Bill</label>
+                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id="inlineCheckbox2" value="Don" onChange={handleCheck}/>
+                        <label class="form-check-label inline-block text-gray-800" for="inlineCheckbox2">Don</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2" type="checkbox" id="inlineCheckbox3" value="option3" disabled/>
-                        <label class="form-check-label inline-block text-gray-800 opacity-50" for="inlineCheckbox3">Will (disabled)</label>
-                    </div>
+                    
                 </div>
                 
 
